@@ -20,6 +20,10 @@ app.use(cors({
   allowedHeaders: ['Content-Type'] // 👈 This is the key fix
 }));
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 
 
 app.get('/',(req,res)=>{
